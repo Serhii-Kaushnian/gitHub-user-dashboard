@@ -22,18 +22,11 @@ export async function requestUserData(userName) {
   }
 }
 
-export async function updateUserData(userData) {
-  const updateData = {
-    [userData.name]: userData.value,
-  };
+export async function requestUserFollowers(followersLink) {
   try {
-  } catch (error) {
-    throw error;
-  }
-}
+    const { data } = await instance.get(followersLink);
 
-export async function updatePetsData(petData) {
-  try {
+    return data;
   } catch (error) {
     throw error;
   }

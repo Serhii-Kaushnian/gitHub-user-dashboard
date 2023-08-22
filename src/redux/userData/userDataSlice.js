@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchUserData, updateUser } from "./userDataOperations";
+import { fetchUserData, getFollowers } from "./userDataOperations";
 
 const initialState = {
   user: null,
+  userFollowers: null,
   isLoading: false,
   isLoadingUpdate: false,
   error: null,
@@ -36,17 +37,17 @@ export const fetchUserDataSlice = createSlice({
       //==========PATCH /user ====================
       //Працює
       // OK
-      .addCase(updateUser.pending, (state, action) => {
+      .addCase(getFollowers.pending, (state, action) => {
         state.isLoadingUpdate = true;
       })
-      .addCase(updateUser.fulfilled, (state, { payload }) => {
+      .addCase(getFollowers.fulfilled, (state, { payload }) => {
         if (!payload) {
           return state;
         }
         state.isLoadingUpdate = false;
-        state.user.user = payload;
+        state.userFollowers = payload;
       })
-      .addCase(updateUser.rejected, (state, { payload }) => {
+      .addCase(getFollowers.rejected, (state, { payload }) => {
         state.isLoadingUpdate = false;
         state.error = payload;
       });

@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 const Card = ({ user }) => {
   return (
     user && (
-      <div>
+      <div style={{ backgroundColor: "orangered" }}>
         <img src={user.avatar_url} alt='user avatar' />
-        <p>Login: {user.login}</p>
-        <p>Name: {user.name}</p>
-        <p>Location: {user.location}</p>
+        {user.login && <p>Login: {user.login}</p>}
+        {user.name && <p>Name: {user.name}</p>}
+        {user.location && <p>Location: {user.location}</p>}
         {user.email && <p>E-Mail: {user.email}</p>}
         {user.blog && (
           <p>
