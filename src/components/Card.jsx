@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Card = ({ user }) => {
   return (
     user && (
-      <div style={{ backgroundColor: "orangered" }}>
+      <div style={{ backgroundColor: "orangered", width: "100%" }}>
         <img src={user.avatar_url} alt='user avatar' />
         {user.login && <p>Login: {user.login}</p>}
         {user.name && <p>Name: {user.name}</p>}

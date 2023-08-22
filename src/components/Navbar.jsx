@@ -8,12 +8,12 @@ const Navbar = () => {
   const user = useSelector(getUser);
 
   return (
-    <div style={{ backgroundColor: "teal", padding: "10px 20px", display: "flex" }}>
-      <Link to='/' className='btn'>
+    <div style={{ padding: "10px 20px", display: "flex", width: "100%" }}>
+      <Link to='/' className='btn' style={{ display: "flex", width: "20%" }}>
         <GrGithub /> GitHub Dashboard
       </Link>
 
-      <div style={{ display: "flex", width: "100%" }}>
+      <div style={{ display: "flex", width: "100%", justifyContent: "space-evenly" }}>
         <Link to='/repos' className='btn'>
           {`Repos ${user ? user?.public_repos : "0"}`}
         </Link>

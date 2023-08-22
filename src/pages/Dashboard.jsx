@@ -1,10 +1,9 @@
 import React from "react";
 import { Info } from "../components";
 
-
 const Dashboard = () => {
   return (
-    <main>
+    <main style={{ display: "flex", height: "100%", width: "100%" }}>
       <Info></Info>
     </main>
   );
