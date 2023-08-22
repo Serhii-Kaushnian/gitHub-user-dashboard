@@ -2,20 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 import { fetchUserData, updateUser } from "./userDataOperations";
 
 const initialState = {
-  user: {
-    name: null,
-    email: null,
-    birthdate: null,
-    phone: null,
-    city: null,
-    picture: null,
-    pets: [],
-  },
+  user: null,
   isLoading: false,
   isLoadingUpdate: false,
-  isUploadingPet: false,
-  isUpdatingPet: false,
-  isDeletingPet: false,
   error: null,
 };
 

@@ -1,16 +1,21 @@
 import axios from "axios";
 
-const BASE_URL = "https://pet-support-project.onrender.com/api";
+// const BASE_URL = "https://api.github.com/users/";
+
+// const instance = axios.create({
+//   baseURL: BASE_URL,
+// });
 
 const instance = axios.create({
-  baseURL: BASE_URL,
+  // .. where we make our configurations
+  baseURL: "https://api.github.com/users/",
 });
 
 //========================== USER  =============================
 
-export async function requestUserData(token) {
+export async function requestUserData(userName) {
   try {
-    const { data } = await instance.get("/user");
+    const { data } = await instance.get(userName);
     return data;
   } catch (error) {
     throw error;
@@ -22,12 +27,6 @@ export async function updateUserData(userData) {
     [userData.name]: userData.value,
   };
   try {
-    const { data } = await instance.patch("/user", updateData, {
-      headers: {
-        "Content-Type": `multipart/form-data;`,
-      },
-    });
-    return data;
   } catch (error) {
     throw error;
   }
@@ -35,12 +34,6 @@ export async function updateUserData(userData) {
 
 export async function updatePetsData(petData) {
   try {
-    const { data } = await instance.patch(`/user/pets/${petData.petId}`, petData.formData, {
-      headers: {
-        "Content-Type": `multipart/form-data;`,
-      },
-    });
-    return data;
   } catch (error) {
     throw error;
   }

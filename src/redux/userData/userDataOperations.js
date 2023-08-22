@@ -1,13 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { requestUserData, updatePetsData, updateUserData } from "../../API/api";
+import { requestUserData, updateUserData } from "../../API/api";
 
 export const fetchUserData = createAsyncThunk(
   "userData/fetchUserData",
-  async (_, { rejectWithValue, getState }) => {
-    const { auth } = getState();
+  async (data, { rejectWithValue }) => {
     try {
-      const userData = await requestUserData(auth.token);
+      const userData = await requestUserData(data);
       if (!userData) {
       }
       return userData;

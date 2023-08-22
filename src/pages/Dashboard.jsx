@@ -1,13 +1,15 @@
 import React from "react";
-import { Info, User, Search, Navbar } from "../components";
+import { Info, Search, Navbar } from "../components";
+import HeaderWrapper from "../components/HeaderWrapper";
 
 const Dashboard = () => {
   return (
     <main>
-      <Navbar></Navbar>
-      <Search></Search>
+      <HeaderWrapper>
+        <Navbar></Navbar>
+        <Search></Search>
+      </HeaderWrapper>
       <Info></Info>
-      <User></User>
     </main>
   );
 };
