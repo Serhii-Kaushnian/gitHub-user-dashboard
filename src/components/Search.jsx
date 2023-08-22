@@ -16,7 +16,7 @@ const Search = () => {
   };
   return (
     <>
-      <div style={{ backgroundColor: "teal", padding: "10px 20px" }}>
+      <div style={{ backgroundColor: "teal", padding: "10px 20px", width: "100%" }}>
         <input type='text' onKeyDown={onKeyDown} value={queury} onChange={onChange} />
       </div>
     </>

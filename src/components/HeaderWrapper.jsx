@@ -1,7 +1,7 @@
 import React from "react";
 
 function HeaderWrapper({ children }) {
-  return <div>{children}</div>;
+  return <div style={{ display: "flex", width: "100%" }}>{children}</div>;
 }
 
 export default HeaderWrapper;

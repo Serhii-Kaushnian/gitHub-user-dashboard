@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { requestUserData, requestUserFollowers } from "../../API/api";
+import { requestUserData, requestUserFollowers, requestUserRepos } from "../../API/api";
 
 export const fetchUserData = createAsyncThunk(
   "userData/fetchUserData",
@@ -15,12 +15,25 @@ export const fetchUserData = createAsyncThunk(
     }
   }
 );
+
 export const getFollowers = createAsyncThunk(
-  "userData/updateUserData",
+  "userData/fetchUserFollowers",
   async (data, { rejectWithValue }) => {
     try {
       const followers = await requestUserFollowers(data);
       return followers;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getRepos = createAsyncThunk(
+  "userData/fetchUserRepos",
+  async (data, { rejectWithValue }) => {
+    try {
+      const repos = await requestUserRepos(data);
+      return repos;
     } catch (error) {
       return rejectWithValue(error.message);
     }

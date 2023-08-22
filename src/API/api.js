@@ -31,3 +31,13 @@ export async function requestUserFollowers(followersLink) {
     throw error;
   }
 }
+
+export async function requestUserRepos(reposLink) {
+  try {
+    const { data } = await instance.get(reposLink);
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
