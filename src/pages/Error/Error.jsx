@@ -13,11 +13,12 @@ const Error = () => {
   );
 };
 const Wrapper = styled.section`
-  min-height: 100vh;
+  min-height: 100%;
   display: grid;
   place-items: center;
-  background: #9bebeb;
+  background: #a2a8d3;
   text-align: center;
+  padding: 20px;
   h1 {
     font-size: 10rem;
   }

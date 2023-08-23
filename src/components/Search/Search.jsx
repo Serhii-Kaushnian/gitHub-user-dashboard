@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { fetchUserData } from "../redux/userData/userDataOperations";
-
+import { fetchUserData } from "../../redux/userData/userDataOperations";
+import { StyledInput } from "./Search.styled";
 const Search = () => {
   const [queury, setQueury] = useState("");
   const dispatch = useDispatch();
@@ -16,9 +16,13 @@ const Search = () => {
   };
   return (
     <>
-      <div>
-        <input type='text' onKeyDown={onKeyDown} value={queury} onChange={onChange} />
-      </div>
+      <StyledInput
+        type='text'
+        onKeyDown={onKeyDown}
+        value={queury}
+        onChange={onChange}
+        placeholder='Enter name here'
+      />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { getUser } from "../redux/userData/userDataSelectors";
-import Card from "./Card";
+import { getUser } from "../../redux/userData/userDataSelectors";
+import { Card } from "../";
 
 const UserInfo = () => {
   const user = useSelector(getUser);

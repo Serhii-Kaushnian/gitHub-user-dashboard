@@ -6,7 +6,7 @@ const initialState = {
   userFollowers: null,
   userRepos: null,
   isLoading: false,
-  isLoadingUpdate: false,
+  isLoadingFollowers: false,
   isLoadingRepos: false,
   error: null,
 };
@@ -41,17 +41,17 @@ export const fetchUserDataSlice = createSlice({
     // OK
     builder
       .addCase(getFollowers.pending, (state, action) => {
-        state.isLoadingUpdate = true;
+        state.isLoadingFollowers = true;
       })
       .addCase(getFollowers.fulfilled, (state, { payload }) => {
         if (!payload) {
           return state;
         }
-        state.isLoadingUpdate = false;
+        state.isLoadingFollowers = false;
         state.userFollowers = payload;
       })
       .addCase(getFollowers.rejected, (state, { payload }) => {
-        state.isLoadingUpdate = false;
+        state.isLoadingFollowers = false;
         state.error = payload;
       });
     //==========GET /userFollowers ====================

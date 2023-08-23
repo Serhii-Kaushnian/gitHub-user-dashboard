@@ -1,4 +1,4 @@
-import Dashboard from "./Dashboard";
-import Error from "./Error";
+import Dashboard from "./Dashboard/Dashboard";
+import Error from "./Error/Error";
 
 export { Dashboard, Error };
