@@ -10,6 +10,7 @@ const Search = () => {
   const [queury, setQueury] = useState("");
   const dispatch = useDispatch();
   const error = useSelector(isError);
+
   const onKeyDown = (e) => {
     if (e.key === "Enter") {
       dispatch(fetchUserData(queury));
@@ -36,16 +37,15 @@ const Search = () => {
   const onChange = (event) => {
     setQueury((prev) => (prev = event.target.value));
   };
+
   return (
-    <>
-      <StyledInput
-        type='text'
-        onKeyDown={onKeyDown}
-        value={queury}
-        onChange={onChange}
-        placeholder='Enter name here'
-      />
-    </>
+    <StyledInput
+      type='text'
+      onKeyDown={onKeyDown}
+      value={queury}
+      onChange={onChange}
+      placeholder='Enter name here'
+    />
   );
 };
 

@@ -1,22 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { StyledParagraph } from "../HeaderLogoLink/HeaderLogoLink.styled";
-import { StyledLi, StyledUl, CardWrapper } from "./Card.styled";
+import { StyledLi, StyledUl, CardWrapper, CardImg } from "./Card.styled";
 const Card = ({ user }) => {
   return (
     user && (
       <CardWrapper>
-        <img
-          src={user.avatar_url}
-          alt='user avatar'
-          style={{
-            display: "block",
-            borderRadius: "10px",
-            margin: "15px",
-            width: "250px",
-            height: "250px",
-          }}
-        />
+        <CardImg src={user.avatar_url} alt='user avatar' />
         <StyledLi>
           <StyledUl>
             {" "}

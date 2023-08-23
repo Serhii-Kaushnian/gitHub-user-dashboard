@@ -1,18 +1,11 @@
 import React from "react";
 import { Info } from "../../components";
-
+import { MainWrapper } from "./Dashboard.styled";
 const Dashboard = () => {
   return (
-    <main
-      style={{
-        height: "calc(100% - 100px)",
-
-        backgroundColor: " #a2a8d3",
-        padding: "10px",
-      }}
-    >
+    <MainWrapper>
       <Info></Info>
-    </main>
+    </MainWrapper>
   );
 };
 

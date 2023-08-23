@@ -4,6 +4,13 @@ export const StyledUl = styled.ul`
   margin: 0;
   width: 100%;
 `;
+export const CardImg = styled.img`
+  display: block;
+  border-radius: 10px;
+  margin: 15px;
+  width: 250px;
+  height: 250px;
+`;
 export const StyledLi = styled.li`
   display: flex;
   flex-direction: column;
