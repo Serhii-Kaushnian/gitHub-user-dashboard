@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { fetchUserData } from "../../redux/userData/userDataOperations";
 import { StyledInput } from "./Search.styled";
+
 const Search = () => {
   const [queury, setQueury] = useState("");
   const dispatch = useDispatch();

@@ -33,6 +33,7 @@ export const StyledParagraph = styled.p`
   font-size: 15px;
   font-weight: 700;
   margin: 10px 0;
+  overflow: hidden;
 
   @media (max-width: 1024px) {
     font-size: 10px;

@@ -41,7 +41,7 @@ const Card = ({ user }) => {
               <StyledParagraph>
                 Blog:{" "}
                 <Link to={user.blog} target='new'>
-                  {user.blog}
+                  {user.blog.slice(0, 24)}
                 </Link>
               </StyledParagraph>
             )}

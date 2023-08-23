@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-
+import { toast } from "react-toastify";
 import { requestUserData, requestUserFollowers, requestUserRepos } from "../../API/api";
 
 export const fetchUserData = createAsyncThunk(
@@ -7,10 +7,21 @@ export const fetchUserData = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const userData = await requestUserData(data);
+
       if (!userData) {
       }
       return userData;
     } catch (error) {
+      toast(`There is no such user as ${data}`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       return rejectWithValue(error.message);
     }
   }
