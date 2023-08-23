@@ -5,7 +5,7 @@ const CommingSoon = () => {
   return (
     <Wrapper>
       <h1>404</h1>
-      <h3>This Page comming soon, sory</h3>
+      <h3>This Page is comming soon, sory</h3>
       <Link to='/' className='btn'>
         back home
       </Link>
@@ -13,7 +13,7 @@ const CommingSoon = () => {
   );
 };
 const Wrapper = styled.section`
-  min-height: 100%;
+  max-height: 100%;
   display: grid;
   place-items: center;
   background: #a2a8d3;

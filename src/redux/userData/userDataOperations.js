@@ -1,5 +1,4 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { toast } from "react-toastify";
 import { requestUserData, requestUserFollowers, requestUserRepos } from "../../API/api";
 
 export const fetchUserData = createAsyncThunk(
@@ -12,17 +11,7 @@ export const fetchUserData = createAsyncThunk(
       }
       return userData;
     } catch (error) {
-      toast(`There is no such user as ${data}`, {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-      return rejectWithValue(error.message);
+      return rejectWithValue(error.response.status);
     }
   }
 );
@@ -50,3 +39,12 @@ export const getRepos = createAsyncThunk(
     }
   }
 );
+
+export const setError = createAsyncThunk("userData/setError", async (isError, { rejectWithValue }) => {
+  try {
+  
+    return isError;
+  } catch (error) {
+    return rejectWithValue(error.message);
+  }
+});

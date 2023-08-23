@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchUserData, getFollowers, getRepos } from "./userDataOperations";
+import { fetchUserData, getFollowers, getRepos, setError } from "./userDataOperations";
 
 const initialState = {
   user: null,
@@ -70,6 +70,20 @@ export const fetchUserDataSlice = createSlice({
       })
       .addCase(getRepos.rejected, (state, { payload }) => {
         state.isLoadingRepos = false;
+        state.error = payload;
+      });
+    // ============Update pet==================
+
+    // ============Update pet==================
+    builder
+      .addCase(setError.pending, (state, action) => {})
+      .addCase(setError.fulfilled, (state, { payload }) => {
+        if (!payload) {
+          return state;
+        }
+        state.error = null;
+      })
+      .addCase(setError.rejected, (state, { payload }) => {
         state.error = payload;
       });
     // ============Update pet==================
